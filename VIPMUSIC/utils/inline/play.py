@@ -19,13 +19,13 @@ def stream_markup_timerr(_, videoid, chat_id, played, dur):
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
     umm = math.floor(percentage)
-    if 0 < umm <= 5:
+    if 0 < umm <= 60:
         bar = "——◉——————————"
-    elif 5 <= umm < 20:
+    elif 60 <= umm < 65:
         bar = "—————◉———————"
-    elif 35 <= umm < 50:
+    elif 65 <= umm < 70:
         bar = "——————◉——————"
-    elif 50 <= umm < 75:
+    elif 70 <= umm < 75:
         bar = "———————◉—————"
     elif 75 <= umm < 80:
         bar = "————————◉————"
@@ -86,13 +86,13 @@ def telegram_markup_timer(_, chat_id, played, dur):
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
     umm = math.floor(percentage)
-    if 0 < umm <= 5:
+    if 0 < umm <= 60:
         bar = "——◉——————————"
-    elif 5 <= umm < 20:
+    elif 60 <= umm < 65:
         bar = "—————◉———————"
-    elif 35 <= umm < 50:
+    elif 65 <= umm < 70:
         bar = "——————◉——————"
-    elif 50 <= umm < 75:
+    elif 70 <= umm < 75:
         bar = "———————◉—————"
     elif 75 <= umm < 80:
         bar = "————————◉————"
@@ -307,13 +307,13 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
     umm = math.floor(percentage)
-    if 0 < umm <= 5:
+    if 0 < umm <= 60:
         bar = "——◉——————————"
-    elif 5 <= umm < 20:
+    elif 60 <= umm < 65:
         bar = "—————◉———————"
-    elif 35 <= umm < 50:
+    elif 65 <= umm < 70:
         bar = "——————◉——————"
-    elif 50 <= umm < 75:
+    elif 70 <= umm < 75:
         bar = "———————◉—————"
     elif 75 <= umm < 80:
         bar = "————————◉————"
@@ -374,10 +374,10 @@ def stream_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
+                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/King_boy_X"
             ),
             InlineKeyboardButton(
-                text="❰𝐀𝐋𝐋 𝐁𝐎𝐓𝐒❱", url="https://t.me/TG_NAME_STYLE/4619"
+                text="❰𝐀𝐋𝐋 𝐁𝐎𝐓𝐒❱", url="https://t.me/LOFI_MUSIC_ROBOT"
             ),
         ],
         [
@@ -557,13 +557,13 @@ def stream_markup_timer2(_, chat_id, played, dur):
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
     umm = math.floor(percentage)
-    if 0 < umm <= 5:
+    if 0 < umm <= 60:
         bar = "——◉——————————"
-    elif 5 <= umm < 20:
+    elif 60 <= umm < 65:
         bar = "—————◉———————"
-    elif 35 <= umm < 50:
+    elif 65 <= umm < 70:
         bar = "——————◉——————"
-    elif 50 <= umm < 75:
+    elif 70 <= umm < 75:
         bar = "———————◉—————"
     elif 75 <= umm < 80:
         bar = "————————◉————"
@@ -762,13 +762,13 @@ def panel_markup_4(_, vidid, chat_id, played, dur):
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
     umm = math.floor(percentage)
-    if 0 < umm <= 5:
+    if 0 < umm <= 60:
         bar = "——◉——————————"
-    elif 5 <= umm < 20:
+    elif 60 <= umm < 65:
         bar = "—————◉———————"
-    elif 35 <= umm < 50:
+    elif 65 <= umm < 70:
         bar = "——————◉——————"
-    elif 50 <= umm < 75:
+    elif 70 <= umm < 75:
         bar = "———————◉—————"
     elif 75 <= umm < 80:
         bar = "————————◉————"
