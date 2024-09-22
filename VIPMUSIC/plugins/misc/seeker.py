@@ -20,13 +20,13 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
     umm = math.floor(percentage)
-    if 0 < umm <= 60:
+    if 0 < umm <= 5:
         bar = "——◉——————————"
-    elif 60 <= umm < 65:
+    elif 5 <= umm < 20:
         bar = "—————◉———————"
-    elif 65 <= umm < 70:
+    elif 35 <= umm < 50:
         bar = "——————◉——————"
-    elif 70 <= umm < 75:
+    elif 50 <= umm < 75:
         bar = "———————◉—————"
     elif 75 <= umm < 80:
         bar = "————————◉————"
@@ -82,13 +82,13 @@ def telegram_markup_timer(_, chat_id, played, dur):
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
     umm = math.floor(percentage)
-    if 0 < umm <= 60:
+    if 0 < umm <= 5:
         bar = "——◉——————————"
-    elif 60 <= umm < 65:
+    elif 5 <= umm < 20:
         bar = "—————◉———————"
-    elif 65 <= umm < 70:
+    elif 35 <= umm < 50:
         bar = "——————◉——————"
-    elif 70 <= umm < 75:
+    elif 50 <= umm < 75:
         bar = "———————◉—————"
     elif 75 <= umm < 80:
         bar = "————————◉————"
@@ -148,7 +148,7 @@ asyncio.create_task(timer())
 
 
 async def markup_timer():
-    while not await asyncio.sleep(120):
+    while not await asyncio.sleep(2):
         active_chats = await get_active_chats()
         for chat_id in active_chats:
             try:
