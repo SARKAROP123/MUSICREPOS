@@ -116,7 +116,6 @@ def telegram_markup_timer(_, chat_id, played, dur):
                 url=f"https://t.me/{app.username}?startgroup=true",
             )
         ],
-                ],
         [
             InlineKeyboardButton(
                 text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
