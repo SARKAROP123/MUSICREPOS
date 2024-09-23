@@ -211,7 +211,7 @@ autoclean = []
 
 START_IMG_URL = getenv(
     "START_IMG_URL",
-    "https://envs.sh/0N7.jpg",
+    "https://telegra.ph/file/41ec8f174b98e691047f7.png",
 )
 
 PING_IMG_URL = getenv(
