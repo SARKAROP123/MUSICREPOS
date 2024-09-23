@@ -11,7 +11,7 @@ import asyncio
 import time
 
 from pyrogram import filters
-from pyrogram.enums import ChatType, ParseMode
+from pyrogram.enums import ParseMode
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 
@@ -25,7 +25,6 @@ from VIPMUSIC.plugins.sudo.sudoers import sudoers_list
 from VIPMUSIC.utils.database import (
     add_served_chat,
     add_served_user,
-    blacklisted_chats,
     get_assistant,
     get_lang,
     get_userss,
@@ -64,7 +63,7 @@ async def ban_new(client, message):
 async def start_comm(client, message: Message, _):
     chat_id = message.chat.id
     await add_served_user(message.from_user.id)
-    await message.react("❤️‍🔥")
+    await message.react("🕊️")
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
@@ -237,27 +236,27 @@ async def start_comm(client, message: Message, _):
         await vip.delete()
         vips = await message.reply_text("**⚡s**")
         await asyncio.sleep(0.2)
-        await vips.edit_text("**𝐁𝐨𝐭..**")
+        await vips.edit_text("**⚡sᴛ**")
         await asyncio.sleep(0.2)
-        await vips.edit_text("**𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠**")
+        await vips.edit_text("**⚡sᴛᴀ**")
         await asyncio.sleep(0.2)
-        await vips.edit_text("**𝐁𝐚𝐛𝐲📍..**")
+        await vips.edit_text("**⚡sᴛᴀʀ**")
         await asyncio.sleep(0.2)
-        await vips.edit_text("**𝐇𝐞𝐲**")
+        await vips.edit_text("**⚡sᴛᴀʀᴛ**")
         await asyncio.sleep(0.2)
-        await vips.edit_text("**𝐁𝐚𝐛𝐲 ꨄ**")
+        await vips.edit_text("**⚡sᴛᴀʀᴛɪɴ**")
         await asyncio.sleep(0.2)
-        await vips.edit_text("**𝐇𝐨𝐰**")
+        await vips.edit_text("**⚡sᴛᴀʀᴛɪɴɢ.**")
         await asyncio.sleep(0.2)
-        await vips.edit_text("**𝐀𝐫𝐞**")
+        await vips.edit_text("**⚡sᴛᴀʀᴛɪɴɢ..**")
         await asyncio.sleep(0.2)
-        await vips.edit_text("**𝐘𝐨𝐮⚡....**")
+        await vips.edit_text("**⚡sᴛᴀʀᴛɪɴɢ...**")
         await asyncio.sleep(0.1)
-        await vips.edit_text("**𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 ꨄ︎ 𝐁𝐚𝐛𝐲📍..**")
+        await vips.edit_text("**⚡sᴛᴀʀᴛɪɴɢ.**")
         await asyncio.sleep(0.1)
-        await vips.edit_text("**𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 ꨄ︎ 𝐁𝐚𝐛𝐲📍..**")
+        await vips.edit_text("**⚡sᴛᴀʀᴛɪɴɢ....**")
         await asyncio.sleep(0.1)
-        await vips.edit_text("**𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 ꨄ︎ 𝐁𝐚𝐛𝐲📍..**")
+        await vips.edit_text("**⚡sᴛᴀʀᴛɪɴɢ.**")
 
         await vips.delete()
 
@@ -281,24 +280,26 @@ async def start_comm(client, message: Message, _):
 @app.on_message(filters.command(["start"]) & filters.group & ~BANNED_USERS)
 @LanguageStart
 async def testbot(client, message: Message, _):
+    photo_file = await app.download_media(message.chat.photo.big_file_id)
     out = alive_panel(_)
     uptime = int(time.time() - _boot_)
     chat_id = message.chat.id
-    if config.START_IMG_URL:
+    if photo_file:
+        await message.reply_photo(
+            photo=photo_file,
+            caption=_["start_7"].format(app.mention, get_readable_time(uptime)),
+            reply_markup=InlineKeyboardMarkup(out),
+        )
+    else:
         await message.reply_photo(
             photo=config.START_IMG_URL,
             caption=_["start_7"].format(app.mention, get_readable_time(uptime)),
             reply_markup=InlineKeyboardMarkup(out),
         )
-    else:
-        await message.reply_text(
-            text=_["start_7"].format(app.mention, get_readable_time(uptime)),
-            reply_markup=InlineKeyboardMarkup(out),
-        )
     return await add_served_chat(message.chat.id)
 
 
-@app.on_message(filters.new_chat_members, group=-1)
+@app.on_message(filters.new_chat_members, group=3)
 async def welcome(client, message: Message):
     chat_id = message.chat.id
     if config.PRIVATE_BOT_MODE == str(True):
@@ -314,25 +315,12 @@ async def welcome(client, message: Message):
             language = await get_lang(message.chat.id)
             _ = get_string(language)
             if member.id == app.id:
-                chat_type = message.chat.type
-                if chat_type != ChatType.SUPERGROUP:
-                    await message.reply_text(_["start_5"])
-                    return await app.leave_chat(message.chat.id)
-                if chat_id in await blacklisted_chats():
-                    await message.reply_text(
-                        _["start_6"].format(
-                            f"https://t.me/{app.username}?start=sudolist"
-                        )
-                    )
-                    return await app.leave_chat(chat_id)
+                photo_file = await app.download_media(message.chat.photo.big_file_id)
                 userbot = await get_assistant(message.chat.id)
                 out = start_pannel(_)
-                await message.reply_text(
-                    _["start_2"].format(
-                        app.mention,
-                        userbot.username,
-                        userbot.id,
-                    ),
+                await message.reply_photo(
+                    photo=photo_file,
+                    caption=_["start_2"],
                     reply_markup=InlineKeyboardMarkup(out),
                 )
             if member.id in config.OWNER_ID:
