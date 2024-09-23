@@ -225,6 +225,46 @@ async def start_comm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
+        vip = await message.reply_text(
+            f"**𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐛𝐲 ꨄ︎ {message.from_user.mention}**"
+        )
+        await vip.edit_text(f"**𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐛𝐲 ꨄ︎ {message.from_user.mention}  ❣️**")
+        await vip.edit_text(f"**𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐛𝐲 ꨄ︎ {message.from_user.mention}  🐥**")
+        await vip.edit_text(f"**𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐛𝐲 ꨄ︎ {message.from_user.mention}  ✨**")
+        await vip.edit_text(f"**𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐛𝐲 ꨄ︎ {message.from_user.mention}  😻**")
+        await vip.edit_text(f"**𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐛𝐲 ꨄ︎ {message.from_user.mention}  🎉**")
+
+        await vip.delete()
+        vips = await message.reply_text("**⚡s**")
+        await asyncio.sleep(0.2)
+        await asyncio.sleep(0.2)
+        await vips.edit_text("𝐁𝐨𝐭 ..")
+        await asyncio.sleep(0.2)
+        await vips.edit_text(" 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠")
+        await asyncio.sleep(0.2)
+        await vips.edit_text("𝐁𝐚𝐛𝐲📍..")
+        await asyncio.sleep(0.2)
+        await vips.edit_text("𝐇𝐞𝐲")
+        await asyncio.sleep(0.2)
+        await vips.edit_text("𝐁𝐚𝐛𝐲 ꨄ")
+        await asyncio.sleep(0.2)
+        await vips.edit_text("𝐇𝐨𝐰")
+        await asyncio.sleep(0.2)
+        await vips.edit_text("𝐀𝐫𝐞")
+        await asyncio.sleep(0.2)
+        await vips.edit_text("𝐘𝐨𝐮⚡....")
+        await asyncio.sleep(0.1)
+        await vips.edit_text("𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 ꨄ︎ 𝐁𝐚𝐛𝐲📍..")
+        await asyncio.sleep(0.1)
+        await vips.edit_text("𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 ꨄ︎ 𝐁𝐚𝐛𝐲📍..")
+        await asyncio.sleep(0.1)
+        await vips.edit_text("𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 ꨄ︎ 𝐁𝐚𝐛𝐲📍..")
+
+        await vips.delete()
+
+        done = await message.reply_text("💞")
+        await asyncio.sleep(0.5)
+        await done.delete()
         await message.reply_photo(
             photo=config.START_IMG_URL,
             caption=_["start_2"].format(message.from_user.mention, app.mention),
