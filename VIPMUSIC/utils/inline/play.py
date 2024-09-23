@@ -46,32 +46,22 @@ def stream_markup_timerr(_, videoid, chat_id, played, dur):
                 text=f"{played} •{bar}• {dur}",
                 url=f"https://t.me/{app.username}?startgroup=true",
             )
-        ],
+                ],
         [
             InlineKeyboardButton(
-                text="✚ ᴘʟᴀʏʟɪsᴛ", callback_data=f"vip_playlist {videoid}"
+                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
             ),
             InlineKeyboardButton(
-                text="ᴄᴏɴᴛʀᴏʟs ♻",
-                callback_data=f"Pages Back|3|{videoid}|{chat_id}",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="📥 ᴠɪᴅᴇᴏ", callback_data=f"downloadvideo {videoid}"
-            ),
-            InlineKeyboardButton(
-                text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {videoid}"
+                text="❰𝐀𝐋𝐋 𝐁𝐎𝐓𝐒❱", url="https://t.me/TG_NAME_STYLE/4619"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="๏ ᴀʟʟ ғᴇᴀᴛᴜʀᴇs ๏",
-                callback_data=f"Pages Forw|0|{videoid}|{chat_id}",
+                text="❰𝐏𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄❱", url="https://t.me/TG_NAME_STYLE/4602"
             ),
         ],
     ]
-
+    
     return buttons
 
 
@@ -126,27 +116,18 @@ def telegram_markup_timer(_, chat_id, played, dur):
                 url=f"https://t.me/{app.username}?startgroup=true",
             )
         ],
+                ],
         [
             InlineKeyboardButton(
-                text="✚ ᴘʟᴀʏʟɪsᴛ", callback_data=f"vip_playlist {videoid}"
+                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
             ),
             InlineKeyboardButton(
-                text="ᴄᴏɴᴛʀᴏʟs ♻",
-                callback_data=f"Pages Back|3|{videoid}|{chat_id}",
+                text="❰𝐀𝐋𝐋 𝐁𝐎𝐓𝐒❱", url="https://t.me/TG_NAME_STYLE/4619"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="📥 ᴠɪᴅᴇᴏ", callback_data=f"downloadvideo {videoid}"
-            ),
-            InlineKeyboardButton(
-                text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {videoid}"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="๏ ᴀʟʟ ғᴇᴀᴛᴜʀᴇs ๏",
-                callback_data=f"Pages Forw|0|{videoid}|{chat_id}",
+                text="❰𝐏𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄❱", url="https://t.me/TG_NAME_STYLE/4602"
             ),
         ],
     ]
@@ -398,28 +379,18 @@ def stream_markup(_, videoid, chat_id):
                 text=_["S_B_5"],
                 url=f"https://t.me/{app.username}?startgroup=true",
             ),
-        ],
+                ],
         [
             InlineKeyboardButton(
-                text="✚ ᴘʟᴀʏʟɪsᴛ", callback_data=f"vip_playlist {videoid}"
+                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
             ),
             InlineKeyboardButton(
-                text="ᴄᴏɴᴛʀᴏʟs ♻",
-                callback_data=f"Pages Back|3|{videoid}|{chat_id}",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="📥 ᴠɪᴅᴇᴏ", callback_data=f"downloadvideo {videoid}"
-            ),
-            InlineKeyboardButton(
-                text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {videoid}"
+                text="❰𝐀𝐋𝐋 𝐁𝐎𝐓𝐒❱", url="https://t.me/TG_NAME_STYLE/4619"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="๏ ᴀʟʟ ғᴇᴀᴛᴜʀᴇs ๏",
-                callback_data=f"Pages Forw|0|{videoid}|{chat_id}",
+                text="❰𝐏𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄❱", url="https://t.me/TG_NAME_STYLE/4602"
             ),
         ],
     ]
@@ -876,18 +847,18 @@ def panel_markup_clone(_, vidid, chat_id):
             InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+                ],
+        [
+            InlineKeyboardButton(
+                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
+            ),
+            InlineKeyboardButton(
+                text="❰𝐀𝐋𝐋 𝐁𝐎𝐓𝐒❱", url="https://t.me/TG_NAME_STYLE/4619"
+            ),
         ],
         [
             InlineKeyboardButton(
-                text="📥 ᴠɪᴅᴇᴏ", callback_data=f"downloadvideo {vidid}"
-            ),
-            InlineKeyboardButton(
-                text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {vidid}"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="✚ ᴘʟᴀʏʟɪsᴛ ✚", callback_data=f"vip_playlist {vidid}"
+                text="❰𝐏𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄❱", url="https://t.me/TG_NAME_STYLE/4602"
             ),
         ],
     ]
