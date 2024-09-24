@@ -41,7 +41,6 @@ from .help import paginate_modules
 
 loop = asyncio.get_running_loop()
 
-
 @app.on_message(group=-1)
 async def ban_new(client, message):
     user_id = (
