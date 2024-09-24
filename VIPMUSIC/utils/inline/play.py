@@ -682,9 +682,3 @@ def stream_markup_timer2(_, chat_id, played, dur):
     ]
 
     return buttons
-
-
-def panel_markup_1(_, videoid, chat_id):
-    buttons = [
-        [
-            
