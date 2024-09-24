@@ -7,11 +7,11 @@
 #
 # All rights reserved.
 #
-from .help import *
-from .play import *
-from .playlist import *
-from .queue import *
-from .settings import *
-from .song import *
-from .speed import *
-from .start import *
+
+from .channelplay import *
+from .database import *
+from .decorators import *
+from .formatters import *
+from .inline import *
+from .pastebin import *
+from .sys import *
