@@ -1,28 +1,26 @@
-#
-# Copyright (C) 2024 by TheTeamVivek@Github, < https://github.com/TheTeamVivek >.
-#
-# This file is part of < https://github.com/TheTeamVivek/YukkiMusic > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TheTeamVivek/YukkiMusic/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 import asyncio
+from datetime import datetime, timedelta
 from typing import Union
 
 from ntgcalls import TelegramServerError
 from pyrogram import Client
-from pyrogram.errors import FloodWait
+from pyrogram.enums import ChatMemberStatus
+from pyrogram.errors import (
+    ChatAdminRequired,
+    FloodWait,
+    UserAlreadyParticipant,
+    UserNotParticipant,
+)
 from pyrogram.types import InlineKeyboardMarkup
-from pytgcalls import PyTgCalls, filters
+from pytgcalls import PyTgCalls
 from pytgcalls.exceptions import AlreadyJoinedError, NoActiveGroupCall
 from pytgcalls.types import (
-    ChatUpdate,
+    JoinedGroupCallParticipant,
+    LeftGroupCallParticipant,
     MediaStream,
-    StreamAudioEnded,
-    StreamVideoEnded,
     Update,
 )
+from pytgcalls.types.stream import StreamAudioEnded
 
 import config
 from strings import get_string
@@ -31,27 +29,47 @@ from VIPMUSIC.misc import db
 from VIPMUSIC.utils.database import (
     add_active_chat,
     add_active_video_chat,
+    get_assistant,
     get_audio_bitrate,
     get_lang,
     get_loop,
     get_video_bitrate,
     group_assistant,
+    is_autoend,
     music_on,
     remove_active_chat,
     remove_active_video_chat,
     set_loop,
 )
 from VIPMUSIC.utils.exceptions import AssistantErr
+from VIPMUSIC.utils.formatters import check_duration, seconds_to_min, speed_converter
 from VIPMUSIC.utils.inline.play import stream_markup, telegram_markup
 from VIPMUSIC.utils.stream.autoclear import auto_clean
 from VIPMUSIC.utils.thumbnails import gen_thumb
 
+autoend = {}
+counter = {}
+AUTO_END_TIME = 1
 
-async def _clear_(chat_id):
+
+async def _st_(chat_id):
     db[chat_id] = []
     await remove_active_video_chat(chat_id)
     await remove_active_chat(chat_id)
 
+
+async def _clear_(chat_id):
+    db[chat_id] = []
+
+    await remove_active_video_chat(chat_id)
+    await remove_active_chat(chat_id)
+
+    AMBOT = await app.send_message(
+        chat_id, f"🎶 **ꜱᴏɴɢ ʜᴀꜱ ᴇɴᴅᴇᴅ ɪɴ ᴠᴄ.** ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ʜᴇᴀʀ ᴍᴏʀᴇ sᴏɴɢs?"
+    )
+    await asyncio.sleep(5)
+    await AMBOT.delete()
+    
 
 class Call(PyTgCalls):
     def __init__(self):
