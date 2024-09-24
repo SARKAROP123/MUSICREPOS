@@ -1,3 +1,4 @@
+import asyncio
 import random
 
 from pyrogram import filters
@@ -15,6 +16,8 @@ from VIPMUSIC import YouTube, app
 from VIPMUSIC.core.call import VIP as VIP
 from VIPMUSIC.misc import SUDOERS, db
 from VIPMUSIC.utils.database import (
+    get_active_chats,
+    get_lang,
     is_active_chat,
     is_music_playing,
     is_muted,
@@ -594,7 +597,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         await mystic.edit_text(f"{string}\n\nᴄʜᴀɴɢᴇs ᴅᴏɴᴇ ʙʏ : {mention} !")
 
 
-"""async def markup_timers():
+async def markup_timerss():
     while not await asyncio.sleep(5):
         active_chats = await get_active_chats()
         for chat_id in active_chats:
@@ -684,7 +687,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 continue
 
 
-asyncio.create_task(markup_timers())"""
+asyncio.create_task(markup_timerss())
 
 __MODULE__ = "Adᴍɪɴ"
 __HELP__ = """
