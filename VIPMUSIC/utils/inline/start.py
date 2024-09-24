@@ -43,7 +43,8 @@ def private_panel(_):
         ],
         [
             InlineKeyboardButton(
-                text="❰𝐏𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄❱", url=f"https:/https://t.me/TG_NAME_STYLE/4602")
+                text="❰𝐏𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄❱", url=f"https:/https://t.me/TG_NAME_STYLE/4602",
+            ),
         ],
     ]
     return buttons
